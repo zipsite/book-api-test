@@ -82,7 +82,7 @@ describe('/GET/:id book', () => {
             bookId = bookId > books[i].id ? bookId : books[i].id;
         }
 
-        book.id = isFinite(bookId) ? bookId + 1 : 0;
+        book.id = bookId == 0 ? 0 : bookId + 1;
 
         books.push(book);
 
@@ -126,7 +126,7 @@ describe('/PUT/:id book', () => {
             bookId = bookId > books[i].id ? bookId : books[i].id;
         }
 
-        book.id = bookId + 1;
+        book.id = bookId == 0 ? 0 : bookId + 1;
         console.log(book.id);
 
         books.push(book);
@@ -178,7 +178,7 @@ describe('/DELETE/:id book', () => {
             bookId = bookId > books[i].id ? bookId : books[i].id;
         }
 
-        book.id = isFinite(bookId) ? bookId + 1 : 0;
+        book.id = bookId == 0 ? 0 : bookId + 1;
 
         books.push(book);
 
